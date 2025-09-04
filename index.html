@@ -201,20 +201,29 @@
     </div>
   </section>
 
-  <!-- FOLLOW -->
-  <section id="follow" class="py-24">
+   <!-- FOLLOW -->
+   <section id="follow" class="py-24">
     <div class="mx-auto max-w-6xl px-6 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h3 class="text-3xl md:text-4xl font-bold section-title">Follow Our Journey</h3>
         <p class="mt-4 text-slate-300">Short technical logs, build notes, and field demos. No fluff.</p>
-        <ul class="mt-6 space-y-3 text-slate-300">
-          <li>• YouTube: <span class="text-white font-medium">Logs Automata Vitae</span></li>
-          <li>• GitHub: <span class="text-white font-medium">automata-vitae</span></li>
-          <li>• X / Twitter: <span class="text-white font-medium">@automatavitae</span></li>
-        </ul>
+        <div class="mt-6 flex gap-6 text-slate-300">
+          <a href="https://www.youtube.com/@automatavitae" target="_blank" class="hover:text-red-500 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.7-.8-1.6-.8-2-0.9C17.7 2.7 12 2.7 12 2.7h-.1s-5.7 0-8.7.3c-.4.1-1.3.1-2 0.9C.7 4.6.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.6.8 2.3c.7.8 1.6.8 2 0.9 1.4.1 5.7.3 8.7.3s7.3-.1 8.7-.3c.4-.1 1.3-.1 2-0.9.6-.7.8-2.3.8-2.3s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.6 14.6V7.4l6.3 3.6-6.3 3.6z"/>
+            </svg>
+            <span>YouTube</span>
+          </a>
+          <a href="https://x.com/automatavitae" target="_blank" class="hover:text-sky-400 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M18.9 2H22l-7.6 8.7L22.8 22h-6.5l-5.1-6.7-5.8 6.7H2.2l8.1-9.2L1.6 2h6.7l4.6 6.1L18.9 2z"/>
+            </svg>
+            <span></span>
+          </a>
+        </div>
       </div>
       <div class="glass rounded-2xl p-8 border border-white/10">
-        <form action="https://formspree.io/f/your-form-id" method="POST" class="grid gap-4">
+        <form id="my-form" action="https://formspree.io/f/mwpnwbvl" method="POST" class="grid gap-4">
           <div>
             <label class="text-sm text-slate-400">Email</label>
             <input required name="email" type="email" placeholder="you@domain.com" class="mt-1 w-full rounded-xl bg-slate-900/60 border border-white/10 px-4 py-3 outline-none focus:border-orange-500" />
@@ -223,8 +232,8 @@
             <label class="text-sm text-slate-400">What should we send you?</label>
             <input name="interest" type="text" placeholder="Prototype drops, field tests, early access…" class="mt-1 w-full rounded-xl bg-slate-900/60 border border-white/10 px-4 py-3 outline-none focus:border-orange-500" />
           </div>
-          <button class="rounded-xl bg-orange-600 hover:bg-orange-500 px-5 py-3 font-semibold">Subscribe</button>
-          <p class="text-xs text-slate-400">We send rarely. Unsubscribe anytime.</p>
+          <button id="my-form-button" class="rounded-xl bg-orange-600 hover:bg-orange-500 px-5 py-3 font-semibold">Subscribe</button>
+          <p id="my-form-status" class="mt-3 text-base font-semibold text-center text-green-400"></p>
         </form>
       </div>
     </div>
@@ -236,7 +245,7 @@
       <div class="flex items-center gap-2"><span class="brand text-base text-slate-200">AUTOMATA VITAE</span> <span>© <span id="y"></span></span></div>
       <div class="flex items-center gap-4">
         <a class="hover:text-slate-200" href="#top">Back to top</a>
-        <a class="hover:text-slate-200" href="mailto:hello@automata-vitae.com">hello@automata-vitae.com</a>
+        <a class="hover:text-slate-200" href="mailto:automata@automatavitae.com">automata@automatavitae.com</a>
       </div>
     </div>
   </footer>
@@ -244,6 +253,35 @@
   <script>
     // year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // AJAX form submission
+    var form = document.getElementById("my-form");
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form";
+            }
+          });
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form";
+      });
+    }
+    form.addEventListener("submit", handleSubmit);
   </script>
 </body>
 </html>
