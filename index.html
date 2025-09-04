@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automata Vitae Robotics — Machines Built to Rise Again</title>
+  <meta name="description" content="Automata Vitae builds autonomous, self-repairing machines that extend humanity beyond Earth." />
+  <meta property="og:title" content="Automata Vitae Robotics" />
+  <meta property="og:description" content="Machines Built to Rise Again. Building autonomous systems that detect, adapt to, and recover from failure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/automata-vitae/site/main/static/og-image.jpg" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Anton&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Starfield background */
+    .stars, .stars2, .stars3 { position: fixed; top:0; left:0; right:0; bottom:0; z-index:-3; background-repeat: repeat; background-size: contain; pointer-events:none; }
+    .stars { background-image: radial-gradient(2px 2px at 20px 30px,#fff,transparent), radial-gradient(2px 2px at 40px 70px,#fff,transparent), radial-gradient(1px 1px at 130px 90px,#fff,transparent), radial-gradient(2px 2px at 90px 40px,#fff,transparent); animation: drift 120s linear infinite; opacity:.4 }
+    .stars2{ background-image: radial-gradient(1px 1px at 15px 25px,#fff,transparent), radial-gradient(1px 1px at 60px 120px,#fff,transparent), radial-gradient(2px 2px at 200px 80px,#fff,transparent); animation: drift 180s linear infinite; opacity:.25 }
+    .stars3{ background-image: radial-gradient(1px 1px at 10px 15px,#fff,transparent), radial-gradient(1px 1px at 90px 220px,#fff,transparent); animation: drift 240s linear infinite; opacity:.15 }
+    @keyframes drift { from { background-position:0 0 } to { background-position:-2000px 1000px } }
+
+    /* Subtle glass effect */
+    .glass { backdrop-filter: blur(6px); background: rgba(12,17,31,0.5); }
+
+    .section-title { letter-spacing: .02em; }
+    .gradient-text {
+      background: linear-gradient(90deg,#f97316 0%,#fb7185 40%,#60a5fa 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .brand { font-family: 'Anton', sans-serif; letter-spacing:.02em }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-orange-600/40">
+  <div class="stars"></div><div class="stars2"></div><div class="stars3"></div>
+
+  <!-- NAV -->
+  <header class="fixed top-0 w-full z-40">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="glass rounded-b-2xl border border-white/10 shadow-lg">
+        <div class="flex items-center justify-between px-4 py-3">
+          <a href="#top" class="flex items-center gap-3">
+            <div class="h-9 w-9 rounded-xl bg-gradient-to-br from-orange-500 to-rose-500 grid place-content-center font-black">AV</div>
+            <span class="brand text-xl">AUTOMATA VITAE</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm">
+            <a href="#why" class="hover:text-orange-300">Why</a>
+            <a href="#vision" class="hover:text-orange-300">Vision</a>
+            <a href="#mission" class="hover:text-orange-300">Mission</a>
+            <a href="#logic" class="hover:text-orange-300">Logic</a>
+            <a href="#principles" class="hover:text-orange-300">Principles</a>
+            <a href="#pathways" class="hover:text-orange-300">Pathways</a>
+            <a href="#space" class="hover:text-orange-300">Space</a>
+            <a href="#follow" class="inline-flex items-center gap-2 rounded-xl border border-white/15 px-4 py-1.5 hover:bg-white/5">Follow</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative isolate overflow-hidden pt-36 pb-28">
+    <div class="absolute inset-0 -z-10 opacity-40" aria-hidden="true">
+      <div class="absolute -inset-[30%] blur-3xl" style="background:radial-gradient(60% 60% at 50% 40%,rgba(249,115,22,.25),transparent 60%), radial-gradient(30% 30% at 60% 60%,rgba(96,165,250,.25),transparent 60%)"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h1 class="brand text-6xl md:text-7xl leading-[0.95] tracking-tight">Automata Vitae <span class="gradient-text">Robotics</span></h1>
+          <p class="mt-6 text-lg text-slate-300 max-w-xl">Machines Built to Rise Again. We build autonomous robotic systems that detect, adapt to, and recover from failures — enabling survival in hostile, unreachable environments.</p>
+          <div class="mt-8 flex gap-3">
+            <a href="#follow" class="rounded-xl bg-orange-600 hover:bg-orange-500 px-5 py-3 font-semibold">Follow Our Journey</a>
+            <a href="#why" class="rounded-xl border border-white/15 px-5 py-3 font-semibold hover:bg-white/5">Why We Exist</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-gradient-to-br from-slate-800 to-slate-900">
+            <svg viewBox="0 0 600 450" class="h-full w-full">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f97316"/>
+                  <stop offset="50%" stop-color="#fb7185"/>
+                  <stop offset="100%" stop-color="#60a5fa"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="450" fill="#0b1220"/>
+              <circle cx="470" cy="110" r="70" fill="url(#g)" opacity="0.35"/>
+              <g transform="translate(60,80)" stroke="url(#g)" stroke-width="2" fill="none" opacity="0.9">
+                <path d="M0 180 Q150 -40 300 180"/>
+                <path d="M40 180 Q190 0 340 180" opacity="0.7"/>
+                <path d="M80 180 Q230 40 380 180" opacity="0.5"/>
+              </g>
+              <g transform="translate(150,120)">
+                <rect x="0" y="0" width="300" height="170" rx="18" fill="#0e1626" stroke="#ffffff22"/>
+                <text x="24" y="48" fill="#fff" font-size="26" font-family="Inter, system-ui" font-weight="700">Self‑repairing Autonomy</text>
+                <text x="24" y="86" fill="#9fb0c6" font-size="16" font-family="Inter, system-ui">Detect → Diagnose → Adapt → Recover</text>
+                <rect x="24" y="110" width="252" height="12" rx="6" fill="#1b2741"/>
+                <rect x="24" y="110" width="168" height="12" rx="6" fill="url(#g)"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="section-title text-3xl md:text-4xl font-bold">Why <span class="gradient-text">Automata Vitae</span> Exists</h2>
+      <p class="mt-6 text-lg text-slate-300">Human consciousness is fragile. If we stay confined to Earth, our story ends. Automata Vitae exists to build the machines that will carry humanity beyond our birthplace — and into the stars.</p>
+    </div>
+  </section>
+
+  <!-- VISION + MISSION -->
+  <section id="vision" class="py-16 border-y border-white/10 bg-gradient-to-b from-slate-950 to-slate-900/30">
+    <div class="mx-auto max-w-6xl px-6 grid md:grid-cols-2 gap-10">
+      <div class="glass rounded-2xl p-8 border border-white/10">
+        <h3 class="text-2xl font-semibold">Vision</h3>
+        <p class="mt-3 text-slate-300">Extend humanity beyond Earth by creating machines that survive and self-repair without human help.</p>
+      </div>
+      <div id="mission" class="glass rounded-2xl p-8 border border-white/10">
+        <h3 class="text-2xl font-semibold">Mission</h3>
+        <p class="mt-3 text-slate-300">Build autonomous robotic systems that detect, adapt to, and recover from failures — enabling survival in hostile, unreachable environments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIC OF SURVIVAL -->
+  <section id="logic" class="py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <h3 class="text-3xl md:text-4xl font-bold section-title">The Logic of Survival</h3>
+      <ol class="mt-8 grid md:grid-cols-3 gap-6 text-slate-300">
+        <li class="glass p-6 rounded-2xl border border-white/10">1. Humanity must colonize the universe to survive.</li>
+        <li class="glass p-6 rounded-2xl border border-white/10">2. Colonization requires outposts beyond Earth.</li>
+        <li class="glass p-6 rounded-2xl border border-white/10">3. Outposts require robots to build and maintain them.</li>
+        <li class="glass p-6 rounded-2xl border border-white/10">4. Robots will inevitably break in alien environments.</li>
+        <li class="glass p-6 rounded-2xl border border-white/10">5. Remote repair is impossible because of the speed of light.</li>
+        <li class="glass p-6 rounded-2xl border border-white/10">6. Thus: Robots must adapt, survive, and <span class="font-semibold text-white">self‑repair</span>.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section id="principles" class="py-20 border-y border-white/10 bg-slate-950/40">
+    <div class="mx-auto max-w-6xl px-6">
+      <h3 class="text-3xl md:text-4xl font-bold section-title">Principles We Build By</h3>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="glass p-6 rounded-2xl border border-white/10">
+          <h4 class="font-semibold">First Principles Thinking</h4>
+          <p class="mt-2 text-slate-300">We reduce problems to fundamentals and reassemble the solution.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl border border-white/10">
+          <h4 class="font-semibold">Repair is Survival</h4>
+          <p class="mt-2 text-slate-300">Anything that cannot repair itself is living on borrowed time.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl border border-white/10">
+          <h4 class="font-semibold">Survivability over Perfection</h4>
+          <p class="mt-2 text-slate-300">Rugged beats pristine when failure is the norm.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl border border-white/10">
+          <h4 class="font-semibold">Machines as Intelligent Organisms</h4>
+          <p class="mt-2 text-slate-300">Systems that sense, reason, and act to sustain themselves.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl border border-white/10">
+          <h4 class="font-semibold">Autonomy is Existence</h4>
+          <p class="mt-2 text-slate-300">If it needs babysitting, it won’t survive the void.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl border border-white/10">
+          <h4 class="font-semibold">Intelligence before Reflexes</h4>
+          <p class="mt-2 text-slate-300">Think clearly, then move fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATHWAYS -->
+  <section id="pathways" class="py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <h3 class="text-3xl md:text-4xl font-bold section-title">Two Pathways to Survival</h3>
+      <div class="mt-10 grid md:grid-cols-2 gap-8">
+        <div class="glass p-8 rounded-2xl border border-white/10">
+          <h4 class="text-xl font-semibold">Reflexive (Heuristic) Self‑Repair</h4>
+          <p class="mt-3 text-slate-300">Fast reflexes to immediate, known threats — like an immune system. Built by evolutionary training and heuristics.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl border border-white/10">
+          <h4 class="text-xl font-semibold">Cognitive (Intelligence‑Driven) Self‑Repair</h4>
+          <p class="mt-3 text-slate-300">Strategic reasoning to diagnose and fix novel, unknown failures. Built by embedding human knowledge and LLMs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACE -->
+  <section id="space" class="py-24 border-y border-white/10 bg-gradient-to-br from-slate-900/30 to-slate-800/10">
+    <div class="mx-auto max-w-5xl px-6 text-center">
+      <h3 class="text-3xl md:text-4xl font-bold">Space Colonization is Survival</h3>
+      <p class="mt-6 text-lg text-slate-300">Time is survival. Every step into space buys humanity time — to innovate, to discover, to endure. Automata Vitae builds the machines that carry that hope forward.</p>
+    </div>
+  </section>
+
+  <!-- FOLLOW -->
+  <section id="follow" class="py-24">
+    <div class="mx-auto max-w-6xl px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h3 class="text-3xl md:text-4xl font-bold section-title">Follow Our Journey</h3>
+        <p class="mt-4 text-slate-300">Short technical logs, build notes, and field demos. No fluff.</p>
+        <ul class="mt-6 space-y-3 text-slate-300">
+          <li>• YouTube: <span class="text-white font-medium">Logs Automata Vitae</span></li>
+          <li>• GitHub: <span class="text-white font-medium">automata-vitae</span></li>
+          <li>• X / Twitter: <span class="text-white font-medium">@automatavitae</span></li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-8 border border-white/10">
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="grid gap-4">
+          <div>
+            <label class="text-sm text-slate-400">Email</label>
+            <input required name="email" type="email" placeholder="you@domain.com" class="mt-1 w-full rounded-xl bg-slate-900/60 border border-white/10 px-4 py-3 outline-none focus:border-orange-500" />
+          </div>
+          <div>
+            <label class="text-sm text-slate-400">What should we send you?</label>
+            <input name="interest" type="text" placeholder="Prototype drops, field tests, early access…" class="mt-1 w-full rounded-xl bg-slate-900/60 border border-white/10 px-4 py-3 outline-none focus:border-orange-500" />
+          </div>
+          <button class="rounded-xl bg-orange-600 hover:bg-orange-500 px-5 py-3 font-semibold">Subscribe</button>
+          <p class="text-xs text-slate-400">We send rarely. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+      <div class="flex items-center gap-2"><span class="brand text-base text-slate-200">AUTOMATA VITAE</span> <span>© <span id="y"></span></span></div>
+      <div class="flex items-center gap-4">
+        <a class="hover:text-slate-200" href="#top">Back to top</a>
+        <a class="hover:text-slate-200" href="mailto:hello@automata-vitae.com">hello@automata-vitae.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
